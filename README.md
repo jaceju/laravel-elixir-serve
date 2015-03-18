@@ -10,7 +10,7 @@ $ npm install laravel-elixir-serve --save-dev
 
 ## Usage
 
-Run built-in web server:
+Start built-in web server:
 
 ```javascript
 var elixir = require('laravel-elixir');
@@ -41,5 +41,16 @@ elixir(function(mix) {
 Then run:
 
 ```sh
-$ gulp watch
+$ gulp serve
 ```
+
+## Options
+
+See [gulp-connect-php](https://github.com/micahblu/gulp-connect-php#options)
+
+### watch
+
+Type: `boolen`
+Default: `true`
+
+Call `watch` task.

@@ -4,18 +4,24 @@ var gulp = require('gulp');
 var elixir = require('laravel-elixir');
 var _ = require('underscore');
 var connectPhp = require('gulp-connect-php');
+var config = require('laravel-elixir').config;
 
 elixir.extend('serve', function (options) {
 
     options = _.extend({
         base: 'public',
         port: 8000,
-        router: '../server.php'
+        router: '../server.php',
+        watch: true
     }, options);
 
-    gulp.task('php-server', function () {
-        connectPhp.server(options);
+    gulp.task('serve', function () {
+        connectPhp.server(options, function () {
+            if (options.watch) {
+                gulp.start('watch');
+            }
+        });
     });
 
-    return this.queueTask('php-server');
+    return this.queueTask('serve');
 });
