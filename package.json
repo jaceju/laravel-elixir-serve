@@ -1,0 +1,28 @@
+{
+  "name": "laravel-elixir-serve",
+  "version": "0.1.0",
+  "description": "Run PHP built-in web server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaceju/laravel-elixir-serve"
+  },
+  "keywords": [
+    "gulp",
+    "laravel",
+    "elixir"
+  ],
+  "author": "Jace Ju <jaceju@gmail.com> (https://github.com/jaceju)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaceju/laravel-elixir-serve/issues"
+  },
+  "homepage": "https://github.com/jaceju/laravel-elixir-serve",
+  "dependencies": {
+    "gulp-connect-php": "0.0.5",
+    "underscore": "^1.8.2"
+  }
+}
