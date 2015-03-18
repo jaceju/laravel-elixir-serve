@@ -2,8 +2,6 @@
 
 ## Install
 
-Install package:
-
 ```sh
 $ npm install laravel-elixir-serve --save-dev
 ```
@@ -21,11 +19,12 @@ elixir(function(mix) {
 });
 ```
 
-Or run browser-sync with proxy:
+Or start it with browser-sync and custom port:
 
 ```javascript
 var elixir = require('laravel-elixir');
 require('laravel-elixir-serve');
+require('laravel-elixir-browser-sync');
 
 elixir(function(mix) {
   var port = 8888;
@@ -35,6 +34,7 @@ elixir(function(mix) {
   }).browserSync(null, {
     proxy: 'localhost:' + port
   });
+
 });
 ```
 
@@ -50,7 +50,7 @@ See [gulp-connect-php](https://github.com/micahblu/gulp-connect-php#options)
 
 ### watch
 
-Type: `boolen`
+Type: `boolen`<br/>
 Default: `true`
 
 Call `watch` task.
