@@ -10,16 +10,14 @@ $ npm install laravel-elixir-serve --save-dev
 
 ## Usage
 
-Run browser-sync and pass request to built-in web server:
+Run built-in web server:
 
 ```javascript
 var elixir = require('laravel-elixir');
 require('laravel-elixir-serve');
 
 elixir(function(mix) {
-  mix.serve({
-    port: 8888
-  });
+  mix.serve();
 });
 ```
 
@@ -30,10 +28,12 @@ var elixir = require('laravel-elixir');
 require('laravel-elixir-serve');
 
 elixir(function(mix) {
+  var port = 8888;
+
   mix.serve({
-    port: 8888
-  }).browserSync({
-    proxy: 'localhost:8888'
+    port: port
+  }).browserSync(null, {
+    proxy: 'localhost:' + port
   });
 });
 ```
