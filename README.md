@@ -1,5 +1,7 @@
 # laravel-elixir-serve
 
+Uses the built-in server in PHP 5.4.0+.
+
 ## Install
 
 ```sh
