@@ -5,6 +5,7 @@ var elixir = require('laravel-elixir');
 var _ = require('underscore');
 var connectPhp = require('gulp-connect-php');
 var config = require('laravel-elixir').config;
+var Task = elixir.Task;
 
 elixir.extend('serve', function (options) {
 
@@ -15,13 +16,12 @@ elixir.extend('serve', function (options) {
         watch: true
     }, options);
 
-    gulp.task('serve', function () {
+    new Task('serve', function(){
         connectPhp.server(options, function () {
             if (options.watch) {
                 gulp.start('watch');
             }
         });
+        
     });
-
-    return this.queueTask('serve');
 });
